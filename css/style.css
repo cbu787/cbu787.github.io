@@ -1,0 +1,289 @@
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*::after, *::before {
+  content: '';
+}
+
+body {
+  font-size: 100%;
+  font-family: "Titillium Web", Arial, sans-serif;
+  color: white;
+  background-image: url('../img/macbook-keyboard.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+a {
+  color: #69BE28;
+  text-decoration: none;
+}
+
+/* --------------------------------
+
+Main components
+
+-------------------------------- */
+header {
+  position: relative;
+  height: 160px;
+  line-height: 180px;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+header h1 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-shadow: 1px 1px #000;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    height: 200px;
+    line-height: 225px;
+  }
+  header h1 {
+    font-size: 26px;
+    font-size: 1.8rem;
+  }
+}
+
+.cd-tabs {
+  position: relative;
+  width: 90%;
+  max-width: 960px;
+  margin: 1em auto;
+}
+.cd-tabs:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-tabs nav {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #002244;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-tabs::after {
+    display: none;
+  }
+  .cd-tabs nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .cd-tabs nav {
+    position: relative;
+    float: none;
+    background: transparent;
+  }
+}
+
+.cd-tabs-navigation {
+  width: 100%;
+}
+.cd-tabs-navigation:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-tabs-navigation li {
+  float: left;
+}
+.cd-tabs-navigation a {
+  position: relative;
+  display: block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  font-size: 12px;
+  font-size: 0.75rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  color: white;
+  padding-top: 25px;
+}
+.no-touch .cd-tabs-navigation a:hover {
+  color: #69BE28;
+  background-color: white;
+}
+.cd-tabs-navigation a.selected {
+  background-color: #69BE28;
+  color: white;
+}
+.cd-tabs-navigation a.selected:hover {
+  background-color: #69BE28;
+  color: #002244;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .cd-tabs-navigation li {
+    width: 20%;
+  }
+
+  .cd-tabs-navigation a {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-tabs {
+    /*width: 80px;*/
+  }
+
+  .cd-tabs-navigation {
+    /* move the nav to the left on medium sized devices */
+      width: 80px;
+      float: left;
+    }
+    .cd-tabs-navigation a {
+      height: 95px;
+      width: 80px;
+      padding-top: 43px;
+      color: white;
+    }
+    .cd-tabs-navigation a.selected {
+      color: white;
+    }
+    .cd-tabs-navigation a::before {
+      top: 22px;
+    }
+  }
+@media only screen and (min-width: 960px) {
+  .cd-tabs-navigation {
+    /* tabbed on top on big devices */
+    width: 100%;
+    background-color: #002244;
+    color: white;
+  }
+
+  .cd-tabs-navigation li {
+    float: left;
+    width: 20%;
+  }
+
+  .cd-tabs-navigation a {
+    height: 60px;
+    line-height: 60px;
+    width: auto;
+    text-align: center;
+    font-size: 14px;
+    font-size: 0.875rem;
+    padding: 0em;
+  }
+  .cd-tabs-navigation a.selected {
+    color: white;
+  }
+  .cd-tabs-navigation a::before {
+    top: 50%;
+    margin-top: -10px;
+    margin-left: 0;
+    margin-right: 0;
+    left: 38px;
+  }
+}
+
+.cd-tabs-content {
+  background: white;
+}
+.cd-tabs-content h1 {
+  color: #69BE28;
+  font-size: 1.2rem;
+  padding-bottom: 0.8em;
+}
+.cd-tabs-content h2 {
+  color: #002244;
+  font-size: 1rem;
+}
+.cd-tabs-content li {
+  display: none;
+  padding: 1.4em;
+}
+.cd-tabs-content li.selected {
+  display: block;
+  color: white;
+  -webkit-animation: cd-fade-in 0.5s;
+  -moz-animation: cd-fade-in 0.5s;
+  animation: cd-fade-in 0.5s;
+}
+.cd-tabs-content li p {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: black;
+  /*margin-bottom: 1em;*/
+}
+
+.cd-tabs-content li ul li{
+  display: block;
+  list-style-type: circle;
+  color: #69BE28;
+  padding: 0px;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-tabs-content {
+    min-height: 480px;
+  }
+  .cd-tabs-content li {
+    padding: 2em 2em 2em 7em;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .cd-tabs-content {
+    min-height: 0;
+  }
+  .cd-tabs-content li {
+    padding: 2em;
+  }
+  .cd-tabs-content li p {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+
+@-webkit-keyframes cd-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes cd-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes cd-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
