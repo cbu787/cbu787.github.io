@@ -3,30 +3,51 @@
 Primary style
 
 -------------------------------- */
-*, *::after, *::before {
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-*::after, *::before {
-  content: '';
-}
-
 body {
   font-size: 100%;
-  font-family: "Titillium Web", Arial, sans-serif;
-  color: white;
-  background-image: url('../img/macbook-keyboard.jpeg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+  font-family: "Titillium Web", sans-serif;
+  color: #000;
+  background-color: white;
+}
+
+body, html {
+  /* important */
+  height: 100%;
 }
 
 a {
-  color: #69BE28;
+  color: white;
   text-decoration: none;
+  font-weight: bold;
+}
+
+/* --------------------------------
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
 }
 
 /* --------------------------------
@@ -34,256 +55,237 @@ a {
 Main components
 
 -------------------------------- */
-header {
-  position: relative;
-  height: 160px;
-  line-height: 180px;
-  text-align: center;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-header h1 {
-  font-size: 20px;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-shadow: 1px 1px #000;
-}
-
-@media only screen and (min-width: 768px) {
-  header {
-    height: 200px;
-    line-height: 225px;
-  }
-  header h1 {
-    font-size: 26px;
-    font-size: 1.8rem;
-  }
-}
-
-.cd-tabs {
-  position: relative;
-  width: 90%;
-  max-width: 960px;
-  margin: 1em auto;
-}
-.cd-tabs:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.cd-tabs nav {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  background: #002244;
-  color: white;
-}
-
-@media only screen and (min-width: 768px) {
-  .cd-tabs::after {
-    display: none;
-  }
-  .cd-tabs nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    z-index: 1;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  .cd-tabs nav {
-    position: relative;
-    float: none;
-    background: transparent;
-  }
-}
-
-.cd-tabs-navigation {
+.cd-header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
-.cd-tabs-navigation:after {
+.cd-header:after {
   content: "";
   display: table;
   clear: both;
 }
-.cd-tabs-navigation li {
+.cd-header #cd-logo {
   float: left;
+  margin: 13px 0 0 5%;
 }
-.cd-tabs-navigation a {
-  position: relative;
+.cd-header #cd-logo img {
   display: block;
-  height: 60px;
-  width: 60px;
-  text-align: center;
-  font-size: 12px;
-  font-size: 0.75rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 700;
-  color: white;
-  padding-top: 25px;
 }
-.no-touch .cd-tabs-navigation a:hover {
-  color: #69BE28;
-  background-color: white;
-}
-.cd-tabs-navigation a.selected {
-  background-color: #69BE28;
-  color: white;
-}
-.cd-tabs-navigation a.selected:hover {
-  background-color: #69BE28;
-  color: #002244;
-}
-
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-  .cd-tabs-navigation li {
-    width: 20%;
-  }
-
-  .cd-tabs-navigation a {
-    width: 100%;
-  }
-}
-
 @media only screen and (min-width: 768px) {
-  .cd-tabs {
-    /*width: 80px;*/
+  .cd-header {
+    height: 70px;
   }
+  .cd-header #cd-logo {
+    margin: 23px 0 0 5%;
+  }
+}
 
-  .cd-tabs-navigation {
-    /* move the nav to the left on medium sized devices */
-      width: 80px;
-      float: left;
-    }
-    .cd-tabs-navigation a {
-      height: 95px;
-      width: 80px;
-      padding-top: 43px;
-      color: white;
-    }
-    .cd-tabs-navigation a.selected {
-      color: white;
-    }
-    .cd-tabs-navigation a::before {
-      top: 22px;
-    }
-  }
-@media only screen and (min-width: 960px) {
-  .cd-tabs-navigation {
-    /* tabbed on top on big devices */
-    width: 100%;
-    background-color: #002244;
-    color: white;
-  }
-
-  .cd-tabs-navigation li {
-    float: left;
-    width: 20%;
-  }
-
-  .cd-tabs-navigation a {
-    height: 60px;
-    line-height: 60px;
+.cd-main-nav {
+  float: right;
+  margin-right: 5%;
+  width: 44px;
+  height: 100%;
+  background: url("../img/cd-icon-menu.svg") no-repeat center center;
+  background-size: 44px 44px;
+  cursor: pointer;
+}
+.cd-main-nav ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.cd-main-nav ul.is-visible {
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -o-transform: translateY(50px);
+  transform: translateY(50px);
+}
+.cd-main-nav a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  /*padding-left: 5%;*/
+  text-align: center;
+  background: #000;
+  border-top: 1px solid #fff;
+  color: #eee;
+}
+@media only screen and (min-width: 768px) {
+  .cd-main-nav {
     width: auto;
-    text-align: center;
+    height: auto;
+    background: none;
+    cursor: auto;
+  }
+  .cd-main-nav ul {
+    position: static;
+    width: auto;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+    line-height: 70px;
+  }
+  .cd-main-nav ul.is-visible {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .cd-main-nav li {
+    display: inline-block;
+    margin-left: 1em;
+  }
+  .cd-main-nav a {
+    display: inline-block;
+    height: auto;
+    line-height: normal;
+    background: transparent;
+    padding: .6em 1em;
+    border-top: none;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: bold;
     font-size: 14px;
     font-size: 0.875rem;
-    padding: 0em;
   }
-  .cd-tabs-navigation a.selected {
-    color: white;
-  }
-  .cd-tabs-navigation a::before {
-    top: 50%;
-    margin-top: -10px;
-    margin-left: 0;
-    margin-right: 0;
-    left: 38px;
+  .no-touch .cd-main-nav a:hover {
+    text-decoration: underline;
   }
 }
 
-.cd-tabs-content {
-  background: white;
+.cd-main-content {
+  /* you need to assign a min-height to the main content so that the children can inherit it*/
+  height: 100%;
+  position: relative;
+  z-index: 1;
 }
-.cd-tabs-content h1 {
-  color: #69BE28;
-  font-size: 1.2rem;
-  padding-bottom: 0.8em;
+
+.cd-fixed-bg {
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
 }
-.cd-tabs-content h2 {
-  color: #002244;
-  font-size: 1rem;
-}
-.cd-tabs-content li {
-  display: none;
-  padding: 1.4em;
-}
-.cd-tabs-content li.selected {
-  display: block;
+.cd-fixed-bg h1, .cd-fixed-bg h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 90%;
+  max-width: 1170px;
+  text-align: center;
+  font-size: 30px;
+  font-size: 1.875rem;
+  text-shadow: 2px 2px 20px black;
   color: white;
-  -webkit-animation: cd-fade-in 0.5s;
-  -moz-animation: cd-fade-in 0.5s;
-  animation: cd-fade-in 0.5s;
 }
-.cd-tabs-content li p {
-  font-size: 14px;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: black;
-  /*margin-bottom: 1em;*/
+.cd-fixed-bg.cd-bg-1 {
+  background-image: url("../img/cd-background-1.jpeg");
+}
+.cd-fixed-bg.cd-bg-2 {
+  background-image: url("../img/cd-background-2.jpeg");
+}
+.cd-fixed-bg.cd-bg-3 {
+  background-image: url("../img/cd-background-3.jpg");
+}
+.cd-fixed-bg.cd-bg-4 {
+  background-image: url("../img/cd-background-4.jpeg");
+}
+.cd-fixed-bg.cd-bg-5 {
+  background-image: url("../img/cd-background-5.jpg");
 }
 
-.cd-tabs-content li ul li{
-  display: block;
-  list-style-type: circle;
-  color: #69BE28;
-  padding: 0px;
+.skill-list {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.links-list {
+  text-align: center;
+  padding: 40px;
+}
+
+.links-list a:link {
+  padding: 15px;
+}
+
+span.line {
+  display: inline-block;
 }
 
 @media only screen and (min-width: 768px) {
-  .cd-tabs-content {
-    min-height: 480px;
-  }
-  .cd-tabs-content li {
-    padding: 2em 2em 2em 7em;
+  .cd-fixed-bg h1, .cd-fixed-bg h2 {
+    font-size: 36px;
+    color: white;
+    font-weight: bolder;
+    text-shadow: 1px 1px 10px #000;
   }
 }
-@media only screen and (min-width: 960px) {
-  .cd-tabs-content {
-    min-height: 0;
+@media only screen and (min-width: 1170px) {
+  .cd-fixed-bg {
+    background-attachment: fixed;
   }
-  .cd-tabs-content li {
-    padding: 2em;
-  }
-  .cd-tabs-content li p {
-    font-size: 16px;
-    font-size: 1rem;
+  .cd-fixed-bg h1, .cd-fixed-bg h2 {
+    font-size: 48px;
+    font-weight: 300;
   }
 }
 
-@-webkit-keyframes cd-fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.cd-scrolling-bg {
+  position: relative;
+  min-height: 100%;
+  padding: 4em 0;
+  line-height: 1.6;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
-@-moz-keyframes cd-fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.cd-scrolling-bg.cd-color-1 {
+  background-color: #778dad;
+  color: #eaf5ff;
 }
-@keyframes cd-fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+.cd-scrolling-bg.cd-color-2 {
+  background-color: #be9b7b;
+  color: #4b3832;
+}
+.cd-scrolling-bg.cd-color-3 {
+  background-color: #d9f6af;
+  color: #476719;
+}
+.cd-scrolling-bg.cd-color-4 {
+  background-color: #f9f9f9;
+  color: #d9534f;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-scrolling-bg {
+    padding: 8em 0;
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 2;
+    font-weight: 300;
   }
 }

@@ -4,92 +4,133 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
-
+	<link href='https://fonts.googleapis.com/css?family=Titillium+Web:500;400,600,800' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="https://use.fontawesome.com/b777358f62.js"></script> <!-- FontAwesome-->
 
 	<title>Callum Burns | Web Developer</title>
 </head>
+
 <body>
-<header>
-	<h1>Callum Burns | Web Developer</h1>
-</header>
-<div class="cd-tabs">
-	<nav>
-		<ul class="cd-tabs-navigation">
-			<li><a data-content="about" class="selected" href="#0">About Me</a></li>
-			<li><a data-content="portfolio" href="#0">Portfolio</a></li>
-			<li><a data-content="education" href="#0">Education</a></li>
-			<li><a data-content="skills" href="#0">Skills</a></li>
-			<li><a data-content="contact" href="#0">Contact</a></li>
-		</ul> <!-- cd-tabs-navigation -->
-	</nav>
-
-	<ul class="cd-tabs-content">
-		<li data-content="about" class="selected">
-			<p>Hi, I'm Callum. I'm a junior developer based in Toronto. After moving here from Vancouver last year, I decided to change career paths. I enrolled in and completed an intensive, fully-immersive nine-week Web Development course at <a href="https://bitmaker.co">Bitmaker</a>, Canada's leading tech skills accelerator.</p></br>
-
-			<p>I found the course challenging and rewarding in equal measure, and it left me with the drive to develop my skills further in an industry which is new and exciting to me. I feel that I have only just scratched the surface of what this industry offers, and so I am keen to find a role in which I can implement and develop my recently-acquired skills, and learn many others.</p></br>
-
-			<p>From my career prior to becoming a web developer, I will bring over seven years' experience in client- or customer-facing roles in Canada and the UK. My most recent roles involved working in interdisciplinary teams on projects with strict deadlines, with a focus on compliance with company and client specifications, which I feel will be of great benefit in my first role in the tech industry.</p>.
-		</li>
-
-		<li data-content="portfolio">
-			<p>So far, my <a href="https://github.com/cbu787">Github portfolio</a> comprises of assignments and projects from the Bitmaker course. I completed some of the assignments more than once to help myself understand them better, rather than just following the instructions through to a successful end result.</p>
-			<p>Below are some of the projects I worked on during the Bitmaker course:</p></br>
-      <a href="https://bandaide.herokuapp.com"><h1>Band Aide (Bitmaker final group project)</h1></a>
-      <p>An app designed to unite bands with musicians in their local area. Google Maps shows who's looking near you; contact other musicians to jam or apply join a band of your choice. The final group project, built by a team of 4 utilizing Rails, Foundation, JavaScript/AJAX, Carrierwave, Devise and Google Maps.</p></br>
-      <a href="https://github.com/cbu787/crowdfunder"><h1>Crowdfunder</h1></a>
-      <p>A scaled-down version of Kickstarter, built by a team of 4 using Rails and JavaScript/AJAX.</p></br>
-      <a href="https://github.com/cbu787/table_dynamix"><h1>TableDynamix</h1></a>
-      <p>A scaled-down version of OpenTable, built by a team of 4 using Rails.</p></br>
-			<a href="https://github.com/cbu787/naughts-crosses"><h1>Naughts & Crosses</h1></a>
-			<p>A basic 2-player game of Naughts & Crosses (Tic-Tac-Toe) made with JavaScript/jQuery.</p>
-		</li>
-
-		<li data-content="education">
-			<h1>Bitmaker</h1>
-			<h2>2016 | Toronto, ON</h2></br>
-      <p>Intensive, fully-immersive nine-week Web Development course.</p></br>
-
-      <h1>The University of Dundee</h2>
-			<h2>2005-2010 | Dundee, Scotland</h2></br>
-      <p>Master of Arts degree majoring in History.</p>
-		</li>
-
-		<li data-content="skills">
-			<p>Over the course of the nine weeks at Bitmaker, I developed knowledge of the following:</p></br>
-			<ul class="skill-list">
-				<li>HTML</li>
-				<li>CSS</li>
-				<li>JavaScript</li>
-				<li>jQuery</li>
-				<li>AJAX</li>
-				<li>JSON</li>
-				<li>Bourbon/Neat/Bitters</li>
-				<li>Foundation</li>
-				<li>Git</li>
-				<li>Ruby</li>
-				<li>Ruby on Rails</li></br>
+	<header class="cd-header">
+		<nav class="cd-main-nav">
+			<ul>
+				<li><a href="#about-section">ABOUT</a></li>
+				<li><a href="#portfolio-section">PORTFOLIO</a></li>
+				<li><a href="#education-section">EDUCATION</a></li>
+				<li><a href="#skills-section">SKILLS</a></li>
+				<li><a href="#connect-section">CONNECT</a></li>
 			</ul>
-			<p>Up next:</p></br>
-			<ul class="skill-list">
-				<li>AngularJS</li>
-				<li>node.js</li>
-				<li>Java</li>
-			</ul>
-		</li>
+		</nav> <!-- cd-main-nav -->
+	</header>
 
-		<li data-content="contact">
-			<p>Please feel free to connect on <a href="https://www.linkedin.com/in/cbu787">LinkedIn</a> or <a href="mailto:cbu787@gmail.com">get in touch with me</a> regarding potential employment or development opportunities.</p>
-		</li>
+	<main class="cd-main-content">
+		<div class="cd-fixed-bg cd-bg-1">
+			<section id="about-section">
+				<h1>Callum Burns</br>Web Developer</h1>
+			</section>
+		</div> <!-- cd-fixed-bg -->
 
-	</ul> <!-- cd-tabs-content -->
-</div> <!-- cd-tabs -->
+			<div class="cd-scrolling-bg cd-color-1">
+				<div class="cd-container">
+					<p>Hi, I'm Callum - a junior web developer based in Toronto. After moving across the country from Vancouver last year, I decided to change career paths. I enrolled in and completed an intensive, fully-immersive nine-week Web Development course at <a href="https://bitmaker.co">Bitmaker</a>, Canada's leading tech skills accelerator.</p></br>
 
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+					<p>The course was challenging, but rewarding in equal measure, and it left me with the drive to develop my skills further in an industry which is new and exciting to me. I feel that I have only just scratched the surface of what this industry has to offer, and so I am keen to find a role in which I can utilize and develop my recently-acquired skills, while working with and learning from other developers.</p></br>
+
+					<p>From my career prior to becoming a web developer, I will bring over seven years' experience in client- or customer-facing roles in Canada and the UK. My most recent roles involved working in interdisciplinary teams on projects with strict deadlines, with a focus on compliance with company and client specifications; experience which I feel will be of great benefit in my first role as a developer in the tech industry.</p>
+				</div> <!-- cd-container -->
+			</div> <!-- cd-scrolling-bg -->
+
+			<div class="cd-fixed-bg cd-bg-2">
+				<section id="portfolio-section">
+					<h2>Portfolio</h2>
+				</section>
+			</div> <!-- cd-fixed-bg -->
+
+			<div class="cd-scrolling-bg cd-color-2">
+				<div class="cd-container">
+					<p>So far, my <a href="https://github.com/cbu787">Github portfolio</a> is comprised of assignments and projects from the Bitmaker course. I completed some of the assignments more than once to help myself understand them better, rather than just following the instructions through to a successful end result.</p>
+					<p>Below are some of the projects I worked on during the Bitmaker course:</p></br>
+					<a href="https://bandaide.herokuapp.com"><h3>Band Aide (Bitmaker final group project)</h3></a>
+					<p>An app designed to unite bands with musicians in their local area. Google Maps shows who's looking near you; contact other musicians to jam or apply join a band of your choice. The final group project, built by a team of four using Rails, Foundation, JavaScript/AJAX, Carrierwave, Devise and Google Maps, and deployed to Heroku.</p></br>
+					<a href="https://github.com/cbu787/crowdfunder"><h3>Crowdfunder</h3></a>
+					<p>A scaled-down version of crowdfunding platform Kickstarter, built by a team of four using Rails and JavaScript/AJAX.</p></br>
+					<a href="https://github.com/cbu787/table_dynamix"><h3>TableDynamix</h3></a>
+					<p>A scaled-down version of restaurant reservation service OpenTable, built by a team of four using Rails.</p></br>
+					<a href="https://github.com/cbu787/naughts-crosses"><h3>Naughts & Crosses</h3></a>
+					<p>A basic two-player game of "Tic-Tac-Toe" made with JavaScript/jQuery. I had to call it by its British name (old habits die hard).</p>
+				</div> <!-- cd-container -->
+			</div> <!-- cd-scrolling-bg -->
+
+		<div class="cd-fixed-bg cd-bg-3">
+			<section id="education-section">
+				<h2>Education</h2>
+			</section>
+		</div> <!-- cd-fixed-bg -->
+
+		<div class="cd-scrolling-bg cd-color-3">
+			<div class="cd-container">
+					<h3>Bitmaker</h3>
+					<h3>2016 | Toronto, ON</h3>
+					<p>Having enjoyed two introductory classes at Bitmaker, I undertook the intensive, fully-immersive nine-week Web Development course to send myself down a new career path.</p></br>
+
+					<h3>The University of Dundee</h3>
+					<h3>2005-2010 | Dundee, Scotland</h3>
+					<p>Back in my native Scotland, I completed an undergraduate Master of Arts degree in History.</p>
+			</div> <!-- cd-container -->
+		</div> <!-- cd-scrolling-bg -->
+
+		<div class="cd-fixed-bg cd-bg-4">
+			<section id="skills-section">
+				<h2>Skills</h2>
+			</section>
+		</div> <!-- cd-fixed-bg -->
+
+		<div class="cd-scrolling-bg cd-color-4">
+			<div class="cd-container">
+				<p>Since starting the course at Bitmaker, I have been working with:</p>
+				<ul class="skill-list">
+					<li>HTML & CSS</li>
+					<li>JavaScript, jQuery, AJAX & JSON</li>
+					<li>Bourbon, Neat, Bitters & Refills</li>
+					<li>Foundation</li>
+					<li>Git</li>
+					<li>Ruby & Ruby on Rails</li></br>
+				</ul>
+				<p>As well as developing my knowldge of the above, I'll be turning my hand to learning:</p>
+				<ul class="skill-list">
+					<li>Angular JS</li>
+					<li>node.js</li>
+					<li>Java</li>
+				</ul>
+			</div> <!-- cd-container -->
+		</div> <!-- cd-scrolling-bg -->
+
+		<div class="cd-fixed-bg cd-bg-5">
+			<section id="connect-section">
+			<h2>Connect</h2>
+		</section>
+		</div> <!-- cd-fixed-bg -->
+
+		<div class="cd-scrolling-bg cd-color-1">
+			<div class="cd-container">
+				<p>Please feel free to get in touch with me regarding potential employment, development or tech meetup opportunities, or connect with me on LinkedIn.</p>
+					<div class="links-list">
+						<a href="mailto:cbu787@gmail.com"><i class="fa fa-at fa-2x" aria-hidden="true"></i></a>
+						<a href="https://www.linkedin.com/in/cbu787"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+						<a href="https://github.com/cbu787"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+				</div>
+			</div> <!-- cd-container -->
+		</div> <!-- cd-scrolling-bg -->
+
+	</main> <!-- cd-main-content -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script> <!-- Resource jQuery -->
+
 </body>
+
+
 </html>
