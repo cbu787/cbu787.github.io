@@ -272,12 +272,12 @@ span.line {
   color: #4b3832;
 }
 .cd-scrolling-bg.cd-color-3 {
-  background-color: #d9f6af;
-  color: #476719;
+  background-color: #ccebfb;
+  color: #cb2c31;
 }
 .cd-scrolling-bg.cd-color-4 {
-  background-color: #f9f9f9;
-  color: #d9534f;
+  background-color: #d9f6af;
+  color: #476719;
 }
 
 @media only screen and (min-width: 768px) {
